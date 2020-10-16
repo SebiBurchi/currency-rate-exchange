@@ -36,7 +36,7 @@ public class RateExchangeServiceImpl implements RateExchangeService {
 
 
     @Override
-    public RateExchange getRateExchange(String base, String symbol) {
+    public RateExchange getRateExchange(String base, String symbol) throws Exception {
         RateExchange rateExchange;
 
         UriComponentsBuilder builder = UriComponentsBuilder
@@ -60,7 +60,7 @@ public class RateExchangeServiceImpl implements RateExchangeService {
         return rateExchange;
     }
 
-    private RateExchange failOverMethod() {
+    private RateExchange failOverMethod() throws Exception {
         try {
             DataSet dataSet = restTemplate.getForObject(failOverUrl, DataSet.class);
             if (dataSet == null) {
@@ -76,7 +76,7 @@ public class RateExchangeServiceImpl implements RateExchangeService {
             return RateExchange.builder().date(dataSet.getHeader().getPublishingDate()).base("RON").rates(rates).build();
         } catch (Exception err) {
             logger.error(err.getMessage());
-            return null;
+            throw new Exception(err);
         }
 
     }
