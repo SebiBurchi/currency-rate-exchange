@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class RateExchangeController {
+public class EuropeExchangeController {
 
     @Autowired
     private RateExchangeService rateExchangeService;
