@@ -24,11 +24,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/europe">European Currency<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link" href="/world">Outside Europe Currency</a>
+                <a class="nav-link" href="/europe">Europe Currency</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/world">Outside Europe Currency<span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -43,34 +43,20 @@
 
     <div class="starter-template">
         <h1>Hello</h1>
-        <p class="lead">Page protected. You have EUROPE privileges, so you can exchange here.</p>
+        <p class="lead">Page protected. You have OUTSIDE europe privileges, so you can exchange here.</p>
     </div>
 
-    <p>Here's the list of possible currencies for Europe. Select to see the rate between then:</p>
+    <p>Here's the list of possible currencies for outside Europe. Select to see the rate between then:</p>
     <label for="base"> Currency: </label>
     <select id="base" >
-        <option value="RON" selected>RON</option>
-        <option value="AMD">AMD</option>
-        <option value="AZN">AZN</option>
-        <option value="BYN">BYN</option>
-        <option value="BGN">BGN</option>
-        <option value="HRK">HRK</option>
-        <option value="CZK">CZK</option>
-        <option value="HUF">HUF</option>
-        <option value="MDL">MDL</option>
+        <option value="EUR" selected>EUR</option>
+        <option value="USD">USD</option>
     </select>
 
     <label for="transform"> Transform: </label>
-    <select id="transform" >
+    <select id="transform">
         <option value="RON" selected>RON</option>
-        <option value="AMD">AMD</option>
-        <option value="AZN">AZN</option>
-        <option value="BYN">BYN</option>
-        <option value="BGN">BGN</option>
-        <option value="HRK">HRK</option>
-        <option value="CZK">CZK</option>
-        <option value="HUF">HUF</option>
-        <option value="MDL">MDL</option>
+        <option value="USD">USD</option>
     </select>
 
     <button class="submit-button" type="submit" style="margin-bottom: 30px">Get exachange rate</button>
