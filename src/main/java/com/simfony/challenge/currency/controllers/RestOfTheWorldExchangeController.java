@@ -7,14 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class RestOfTheWorldExchangeController {
 
-    @Autowired
-    private RateExchangeService rateExchangeService;
+    private final RateExchangeService rateExchangeService;
+
+    private final HttpServletRequest request;
+
+    public RestOfTheWorldExchangeController(RateExchangeService rateExchangeService, HttpServletRequest request) {
+        this.rateExchangeService = rateExchangeService;
+        this.request = request;
+    }
 
     @GetMapping(value = "/world")
     public String getRateHome() {
@@ -32,6 +38,6 @@ public class RestOfTheWorldExchangeController {
             return "error";
         }
 
-
     }
+
 }

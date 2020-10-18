@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
-    <title>Public Currency Rate Exchange</title>
+    <title>Currency Rate Exchange</title>
 
     <!-- Style -->
     <link rel="stylesheet" type="text/css"
@@ -13,7 +13,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Public Currency Rate Exchange</a>
+    <a class="navbar-brand" href="#">Currency Rate Exchange</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
                 <a class="nav-link" href="/europe">Europe Currency</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/world">Outside Europe Currency<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/world">World Currency<span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -43,20 +43,52 @@
 
     <div class="starter-template">
         <h1>Hello</h1>
-        <p class="lead">Page protected. You have OUTSIDE europe privileges, so you can exchange here.</p>
+        <p class="lead">Page protected. You have WORLD privileges, so you can exchange here.</p>
     </div>
 
-    <p>Here's the list of possible currencies for outside Europe. Select to see the rate between then:</p>
+    <p>Here's the list of possible currencies for the whole world. Select to see the rate between then:</p>
     <label for="base"> Currency: </label>
     <select id="base" >
-        <option value="EUR" selected>EUR</option>
+        <option value="RON" selected>RON</option>
+        <option value="AMD">AMD</option>
+        <option value="AZN">AZN</option>
+        <option value="BYN">BYN</option>
+        <option value="BGN">BGN</option>
+        <option value="HRK">HRK</option>
+        <option value="CZK">CZK</option>
+        <option value="HUF">HUF</option>
+        <option value="MDL">MDL</option>
+        <option value="GBP">GBP</option>
+        <option value="NGN">NGN</option>
+        <option value="CAD">CAD</option>
+        <option value="MXN">MXN</option>
         <option value="USD">USD</option>
+        <option value="AUD">AUD</option>
+        <option value="CNY">CNY</option>
+        <option value="JPY">JPY</option>
+        <option value="ILS">ILS</option>
     </select>
 
     <label for="transform"> Transform: </label>
     <select id="transform">
         <option value="RON" selected>RON</option>
+        <option value="AMD">AMD</option>
+        <option value="AZN">AZN</option>
+        <option value="BYN">BYN</option>
+        <option value="BGN">BGN</option>
+        <option value="HRK">HRK</option>
+        <option value="CZK">CZK</option>
+        <option value="HUF">HUF</option>
+        <option value="MDL">MDL</option>
+        <option value="GBP">GBP</option>
+        <option value="NGN">NGN</option>
+        <option value="CAD">CAD</option>
+        <option value="MXN">MXN</option>
         <option value="USD">USD</option>
+        <option value="AUD">AUD</option>
+        <option value="CNY">CNY</option>
+        <option value="JPY">JPY</option>
+        <option value="ILS">ILS</option>
     </select>
 
     <button class="submit-button" type="submit" style="margin-bottom: 30px">Get exachange rate</button>
@@ -96,7 +128,7 @@
     $('.submit-button').click(function () {
         var selectedBase = $('#base :selected').text();
         var selectedTransform = $('#transform :selected').text();
-        window.location = '/europe/' + selectedBase + '?transform=' + selectedTransform
+        window.location = '/world/' + selectedBase + '?transform=' + selectedTransform
     })
 </script>
 </body>

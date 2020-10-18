@@ -38,8 +38,8 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         super.configure(http);
         http
                 .authorizeRequests()
-                .antMatchers("/world").hasAnyRole("Europe", "World")
-                .antMatchers("/europe").hasRole("Europe")
+                .antMatchers("/europe").hasAnyRole("Europe", "World")
+                .antMatchers("/world").hasRole("World")
                 .anyRequest().permitAll();
     }
 
